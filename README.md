@@ -80,8 +80,8 @@ Next.js simplifies page routing by providing a straightforward approach. Instead
 
 To create a new page:
 
-1 - Create a folder with the name of the page.
-2 - Inside this folder, add a page.jsx file (or page.tsx if using TypeScript).
+ - Create a folder with the name of the page.
+ - Inside this folder, add a page.jsx file (or page.tsx if using TypeScript).
 
 For example, to create a page at siteName/news/latest, you would create a file at pages/app/news/Latest/page.tsx.
 
@@ -89,12 +89,9 @@ Next.js allows nesting folders to achieve nested routes, making the organization
 
 ##### Dynamic Routes
 
-Dynamic routing is also supported in Next.js. You can create dynamic routes by defining paths with parameters. For instance, a route like /pageName/[id]/page.tsx enables you to fetch the [id] parameter within your .tsx file, allowing for dynamic content generation.
+Dynamic routing is also supported in Next.js. You can create dynamic routes by defining paths with parameters. For instance, a route like "/pageName/[id]/page.tsx" enables you to fetch the [id] parameter within your .tsx file, allowing for dynamic content generation.
 
 This approach streamlines the creation of routes and pages, enhancing the developer experience and project maintainability.
-
-
-Here's a refined version of your text:
 
 #### Layout Component
 
@@ -137,7 +134,7 @@ By utilizing the Link component, you can create intuitive navigation experiences
 
 Next.js simplifies the process of importing Google Fonts into your project.
 
-``
+```
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -146,7 +143,7 @@ const inter = Inter({ subsets: ["latin"] });
     <Navbar/>
     {children}
 </body>
-`` 
+```
 
 To use a Google Font:
 
@@ -157,9 +154,6 @@ To use a Google Font:
 The fonts imported through Next.js are self-hosted, meaning they are loaded from your domain rather than being fetched externally. This results in faster loading times for your website, enhancing the user experience.
 
 By leveraging Next.js's font importing capabilities, you can easily incorporate custom typography into your application while optimizing performance.
-
-
-Here's a refined version of your text:
 
 #### Styles
 
