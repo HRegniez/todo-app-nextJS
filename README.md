@@ -67,7 +67,7 @@ To enable client-side rendering for specific components, you can use the use cli
 Example:
 
 ``
-'use client'`
+'use client'
 ``
 
 This directive signals Next.js to render the specified components on the client side, providing flexibility for dynamic or non-static content.
@@ -120,7 +120,7 @@ To use the Link component:
 
 Example usage:
 
-``
+```
 import Link from 'next/Link';
 
 <Link href="/">
@@ -129,7 +129,7 @@ import Link from 'next/Link';
 <Link href="/tickets">
     Tickets
 </Link>
-``
+```
 
 By utilizing the Link component, you can create intuitive navigation experiences while leveraging Next.js's optimized page preloading capabilities.
 
