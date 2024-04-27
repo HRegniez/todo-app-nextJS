@@ -197,9 +197,59 @@ In this project, I use a dummy server as a json file (_data/db.json). but the da
 
 To keep the code clean, i created a new TicketList.tsx in the same foldrer as the tikets/page.tsx, this will handle the api request
 
-In next js you can directly create async function on components
+In next js you can directly create async function on components.
 
+```
+async function getTickets(): Promise<Ticket[]> {
+    const res = await fetch('http://localhost:4000/tickets')
 
+    return res.json()
+}
+
+export default async function TicketsList() {
+    const tickets: Ticket[] = await getTickets()
+
+  return (
+    <div>
+      <>
+        {tickets.map((ticket) => (
+            <div key={ticket.id} className="card my-5">
+                <h3>{ticket.title}</h3>
+                <p>{ticket.body.slice(0, 200)}</p>
+                <div className={`pill ${ticket.priority}`} >
+                  {ticket.priority} priority
+                </div>
+            </div>
+        ))}
+      </>
+    </div>
+  )
+}
+```
+
+If in your app you have 2 component generated wit the same request, Next will detect that and will only do the request once for both components.
+
+important note: Next js also caches the requests so that wen you go back on the site later that data will still be present, this behavor mght not be wanted.
+
+to counter this behavior you can specify it in your API request:
+
+```
+async function getTickets(): Promise<Ticket[]> {
+    const res = await fetch('http://localhost:4000/tickets',{
+        next: {
+        revalidate: 30
+      }}
+    )
+
+    return res.json()
+}
+```
+
+#### Dynamic routing (params)
+
+in Next js you can easily configure dynamic routing. Just create a folder with the parameter name you want to filter (written in a [] bracket), then get that parameter to dynamicaly generate the component based on that parameter
+
+in this project i use the "app/tckets/[id]", then use te params to get wich [id] is in the url
 
 ### Useful resources
 
