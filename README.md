@@ -187,7 +187,7 @@ By leveraging the Image component in Next.js, developers can efficiently manage 
 
 #### Fetching & valdating data
 
-In this project, I use a dummy server as a json file (_data/db.json). but the data api fetching logic reminds the same.
+In this project, I use a dummy server as a json file (_data/db.json). but the data api fetching logic remains the same.
 
 To keep the code clean, i created a new TicketList.tsx in the same foldrer as the tikets/page.tsx, this will handle the api request
 

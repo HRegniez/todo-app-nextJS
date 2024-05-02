@@ -10,6 +10,16 @@ interface Ticket {
     user_mail: string
 }
 
+export async function generateStaticParams() {
+    const res = await fetch('http://localhost:4000/tickets')
+
+    const tickets = await res.json()
+
+    tickets.map((ticket: {id: string}) => ({
+        id: ticket.id
+    }))
+}
+
 async function getTicket(id: string): Promise<Ticket>{
     const res = await fetch(`http://localhost:4000/tickets/${id}`,{
         next: {
