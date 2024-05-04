@@ -221,11 +221,11 @@ export default async function TicketsList() {
 }
 ```
 
-If in your app you have 2 component generated wit the same request, Next will detect that and will only do the request once for both components.
+If in your app you have 2 component generated with the same request, Next will detect that and will only do the request once for both components.
 
-important note: Next js also caches the requests so that wen you go back on the site later that data will still be present, this behavor mght not be wanted.
+important note: Next js also caches the requests so that wen you go back on the site later that data will still be present, this behavior mght not be wanted.
 
-to counter this behavior you can specify it in your API request:
+to counter this behavior you can specify it using the revalidate prop in your API request:
 
 ```
 async function getTickets(): Promise<Ticket[]> {
@@ -238,12 +238,6 @@ async function getTickets(): Promise<Ticket[]> {
     return res.json()
 }
 ```
-
-#### Dynamic routing (params)
-
-in Next js you can easily configure dynamic routing. Just create a folder with the parameter name you want to filter (written in a [] bracket), then get that parameter to dynamicaly generate the component based on that parameter
-
-in this project i use the "app/tckets/[id]", then use te params to get wich [id] is in the url
 
 ### Useful resources
 
