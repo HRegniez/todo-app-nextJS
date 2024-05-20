@@ -80,7 +80,7 @@ Next.js simplifies page routing by providing a straightforward approach. Instead
 
 To create a new page:
 
- - Create a folder with the name of the page.
+ - Create a folder with the name of the page inside the app folder.
  - Inside this folder, add a page.jsx file (or page.tsx if using TypeScript).
 
 For example, to create a page at siteName/news/latest, you would create a file at pages/app/news/Latest/page.tsx.
@@ -238,6 +238,11 @@ async function getTickets(): Promise<Ticket[]> {
     return res.json()
 }
 ```
+#### Static rendering
+
+Static rendering in Next.js, known as Static Site Generation (SSG), involves generating HTML pages at build time. This means that the HTML for each page is created once, during the build process, rather than on every request. 
+
+The pre-rendered pages are then served to users, resulting in faster load times and improved performance. SSG is ideal for pages with content that doesn’t change often, as it reduces server load and enhances user experience.
 
 ### Useful resources
 
